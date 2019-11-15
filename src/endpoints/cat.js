@@ -1,7 +1,8 @@
 const express = require('express')
 const catRouter = express.Router()
-const adopted = require('../adopted')
+// const adopted = require('../adopted')
 const { cats } = require('../animal_data')
+const {adoptedQueue} = require('../adopted')
 const { Queue, display, isEmpty, peek } = require('../queue')
 
 
@@ -20,7 +21,7 @@ catRouter
     })
     .delete((req, res, next) => {
         let adoptedCat = catQueue.dequeue()
-        adopted.push(adoptedCat)
+        adoptedQueue.enqueue({adoptedCat})
         // console.log('adopted--------', adopted)
         return res.send({
             message: `Thank you for adopting ${adoptedCat.name}! We'll be contacting you soon!`

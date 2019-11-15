@@ -96,13 +96,15 @@ const dogs = [
     },
 ]
 
-const adoptees = [
+const adoptors = [
     'Kayla Brown',
     'Sam Beasly',
+    'Franz Yee',
+    'Memphis Young'
 ]
 
 module.exports = {
-    adoptees: adoptees,
+    adoptors: adoptors,
     cats: cats,
     dogs: dogs
 }

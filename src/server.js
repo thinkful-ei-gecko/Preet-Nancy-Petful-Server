@@ -2,7 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const catRouter = require('./endpoints/cat')
 const dogRouter = require('./endpoints/dog')
-const adopteesRouter = require('./endpoints/adoptee')
+const { adoptorsRouter } = require('./endpoints/adoptor')
+const { adoptedRouter } = require('./adopted')
+const {PORT} = require('./config')
 
 
 const app = express();
@@ -11,7 +13,8 @@ app.use(cors());
 
 app.use(catRouter)
 app.use(dogRouter)
-app.use(adopteesRouter)
+app.use(adoptorsRouter)
+app.use(adoptedRouter)
 // Catch-all 404
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
@@ -29,6 +32,6 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(8080,()=>{
-  console.log('Serving on 8080');
+app.listen(PORT,()=>{
+  console.log(`Serving on ${PORT}`);
 });
