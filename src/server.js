@@ -1,13 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const catRouter = require('./endpoints/cat')
+const dogRouter = require('./endpoints/dog')
+const adopteesRouter = require('./endpoints/adoptee')
+
 
 const app = express();
 app.use(cors());
 
 
 app.use(catRouter)
-
+app.use(dogRouter)
+app.use(adopteesRouter)
 // Catch-all 404
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
