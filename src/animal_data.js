@@ -6,7 +6,8 @@ const cats = [
         sex: 'Male',
         age: 4,
         breed: 'Bengal',
-        story: 'Thrown on the street'
+        story: 'Thrown on the street',
+        adoptor: 'Kayla Brown'
     },
     {
         imageURL: 'https://www.bravotv.com/sites/bravo/files/styles/blog-post-embedded--mobile/public/field_blog_image/2016/11/unleashed-plume.jpg?itok=drjte67H',
@@ -15,7 +16,8 @@ const cats = [
         sex: 'Female',
         age: 3,
         breed: 'Himalayan',
-        story: 'Rescued from an abusive home'
+        story: 'Rescued from an abusive home',
+        adoptor: 'Sam Beasly'
     },
     {
         imageURL: 'http://metaphoricalplatypus.com/wp-content/uploads/2012/12/american-shorthair-cat.jpg',
@@ -24,7 +26,8 @@ const cats = [
         sex: 'Female',
         age: 2,
         breed: 'American Shorthair',
-        story: 'Thrown on the street'
+        story: 'Thrown on the street',
+        adoptor: 'Franz Yee'
     },
     {
         imageURL: 'https://www.shelterluv.com/sites/default/files/animal_pics/13324/2019/10/20/13/20191020130620.png',
@@ -33,7 +36,8 @@ const cats = [
         sex: 'Male',
         age: 4,
         breed: 'LaPerm',
-        story: 'Rescue from an abusive home'
+        story: 'Rescue from an abusive home',
+        adoptor: 'Memphis Young'
     },
     {
         imageURL: 'https://www.animalleague.org/wp-content/uploads/2019/08/email-header-free-feline-weekend-082919-v2.jpg',
@@ -42,7 +46,8 @@ const cats = [
         sex: 'Female',
         age: 2,
         breed: 'American Curl',
-        story: 'Thrown on the street'
+        story: 'Thrown on the street',
+        adoptor: '',
     }
 ]
 

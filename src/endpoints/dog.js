@@ -14,8 +14,8 @@ dogRouter
     .route('/api/dog')
     //getting first dog
     .get((req, res, next) => {
-
         let firstDog = peek(dogQueue)
+        console.log('getting dog', firstDog)
         return res.status(200).json({
             dog: firstDog
         })
