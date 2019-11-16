@@ -1,6 +1,6 @@
 
 
-## Scripts
+## Petful server
 
 
 Server-side repo for the Petful adoption app. Petful is a first come first serve pet adoption app. Users create an account, and will be placed in a line. Adoption listings are populated one at a time, when users are at the front of the line, they will only able to select either the next cat or dog. The server  was built using express, node, and Queue data structure.
