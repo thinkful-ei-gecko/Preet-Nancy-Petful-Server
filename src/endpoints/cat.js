@@ -1,6 +1,6 @@
 const express = require('express')
 const catRouter = express.Router()
-// const adopted = require('../adopted')
+const adopted = require('../adopted')
 const { cats } = require('../animal_data')
 const {adoptedQueue} = require('../adopted')
 const { Queue, display, isEmpty, peek } = require('../queue')
@@ -38,10 +38,11 @@ catRouter
         // console.log(name)
 
         let adoptedCat = catQueue.dequeue()
-        catQueue.enqueue({adoptedCat})
+        catQueue.enqueue(adoptedCat)
+        adoptedQueue.enqueue(adoptedCat)
         console.log('cat queue--------', display(catQueue))
         return res.send({
-            message: `Thank you for adopting ${adoptedCat.name}! We'll be contacting you soon!`
+            adoptedList: display(adoptedQueue)
         })
     }) 
 module.exports = catRouter

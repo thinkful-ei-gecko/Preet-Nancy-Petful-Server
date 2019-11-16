@@ -15,7 +15,7 @@ dogRouter
     //getting first dog
     .get((req, res, next) => {
         let firstDog = peek(dogQueue)
-        console.log('getting dog', firstDog)
+        // console.log('getting dog', firstDog)
         return res.status(200).json({
             dog: firstDog
         })
@@ -24,11 +24,18 @@ dogRouter
 
     //adopting a dog
     .delete((req, res, next) => {
-        console.log('in dog.js this is the adoptor queue:',display(adoptorQueue))
+        // console.log('in dog.js this is the adoptor queue:',display(adoptorQueue))
         let adoptedDog = dogQueue.dequeue()
-        adoptedQueue.enqueue({adoptedDog})
+        dogQueue.enqueue(adoptedDog)
+        adoptedQueue.enqueue(adoptedDog)
+
+        let adopterDequeue = adoptorQueue.dequeue()
+        adoptorQueue.enqueue(adopterDequeue)
+        console.log('current adoptor list', display(adoptorQueue))
+        // console.log('adopted list',display(adoptedQueue))
         return res.send({
-            message: `Thank you for adopting ${adoptedDog.name}! We'll be contacting you soon!`
+            // message: `Thank you for adopting ${adoptedDog.name}! We'll be contacting you soon!`,
+            adoptedList: display(adoptedQueue)
         })
     }) 
 module.exports = dogRouter

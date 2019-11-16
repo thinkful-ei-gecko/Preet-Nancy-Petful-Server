@@ -31,6 +31,7 @@ adoptorsRouter
     //dequeueing adopter after adopting a dog or cat
     .delete((req, res, next) => {
         let adopterDequeue = adoptorQueue.dequeue()
+        adopterDequeue.enqueue(adopterDequeue)
         console.log(display(adoptorQueue))
         return res.send({
             message: `${adopterDequeue} has been dequeued`

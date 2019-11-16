@@ -7,7 +7,7 @@ let adoptedQueue = new Queue()
 adoptedRouter
     .route('/api/adopted')
     .get((req, res, next) => {
-        console.log(display(adoptedQueue))
+        console.log('adopted list',display(adoptedQueue))
         return res.status(200).json({
             message: 'adopted queue will send'
         })
