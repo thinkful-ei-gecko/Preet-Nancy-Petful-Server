@@ -1,26 +1,26 @@
-# Express Boilerplate!
 
-This is a boilerplate project used for starting new projects!
-
-## How do set up?
-
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
-
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
 
 ## Scripts
 
-Start the application `npm start`
 
-Start nodemon for the application `npm run dev`
+Server-side repo for the Petful adoption app. Petful is a first come first serve pet adoption app. Users create an account, and will be placed in a line. Adoption listings are populated one at a time, when users are at the front of the line, they will only able to select either the next cat or dog. The server  was built using express, node, and Queue data structure.
 
-Run the tests in watch mode `npm test`
+## Details
 
-## Deploying
+* The live app can be found at: [https://petful-app.preetsingh13.now.sh](https://petful-app.preetsingh13.now.sh)
 
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+* Heroku deployment: [https://shrouded-cove-70604.herokuapp.com/api](https://shrouded-cove-70604.herokuapp.com/api)
+
+* Client Repo: [https://github.com/thinkful-ei-gecko/Preet-Nancy-Petful-Client](https://github.com/thinkful-ei-gecko/Preet-Nancy-Petful-Client)
+
+* Server Repo: [https://github.com/thinkful-ei-gecko/Preet-Nancy-Petful-Server](https://github.com/thinkful-ei-gecko/Preet-Nancy-Petful-Server)
+
+* Pair: Preet Singh and Nancy Phiukhao
+
+## Technology
+
+* React
+* Node
+* Express
+* HTML5
+* CSS3```
