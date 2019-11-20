@@ -22,7 +22,7 @@ adoptorsRouter
     .post(jsonParser, (req, res, next) => {
         const { name } = req.body
         adoptorQueue.enqueue(name)
-        console.log(display(adoptorQueue))
+        //console.log(display(adoptorQueue))
         return res.status(200).json({
             message: `you've been queued`
         })

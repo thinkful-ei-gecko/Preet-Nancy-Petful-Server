@@ -22,7 +22,7 @@ catRouter
     .get((req, res, next) => {
         let firstCat = peek(catQueue)
         if(firstCat.name !== 'Missy') {
-            console.log('its not misssy')
+            //console.log('its not misssy')
         }
 
         

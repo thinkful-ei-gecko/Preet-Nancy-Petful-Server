@@ -9,6 +9,7 @@ class Queue {
     constructor() {
         this.first = null;
         this.last = null;
+        this.length = 0;
     }
 
     enqueue(data) {
@@ -22,6 +23,7 @@ class Queue {
         }
 
         this.last = node;
+        this.length++;
     }
 
     dequeue() {
@@ -36,6 +38,7 @@ class Queue {
             this.last = null;
         }
         // console.log(node.data)
+        this.length--;
         return node.data;
     }
 }
@@ -53,6 +56,7 @@ function isEmpty(queue) {
 
 function display(queue) {
     let result = [];
+    if(this.length == 0) return result;
     let curr = queue.first;
     // console.log(queue.first.data)
     while (curr !== null) {

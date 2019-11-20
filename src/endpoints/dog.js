@@ -26,6 +26,7 @@ dogRouter
     .delete((req, res, next) => {
         console.log('in dog.js this is the adoptor queue:',display(adoptorQueue))
         let adoptedDog = dogQueue.dequeue()
+        dogQueue.enqueue(adoptedDog);
         adoptedQueue.enqueue({adoptedDog})
         return res.send({
             message: `Thank you for adopting ${adoptedDog.name}! We'll be contacting you soon!`
