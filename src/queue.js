@@ -35,7 +35,6 @@ class Queue {
         if (node === this.last) {
             this.last = null;
         }
-        // console.log(node.data)
         return node.data;
     }
 }
@@ -54,7 +53,6 @@ function isEmpty(queue) {
 function display(queue) {
     let result = [];
     let curr = queue.first;
-    // console.log(queue.first.data)
     while (curr !== null) {
         result.push(curr.data)
         curr = curr.next;

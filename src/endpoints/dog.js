@@ -4,6 +4,7 @@ const {adoptedQueue} = require('../adopted')
 const {adoptorQueue} = require('./adoptor')
 const { dogs } = require('../animal_data')
 const { Queue, display, isEmpty, peek } = require('../queue')
+const jsonParser = express.json()
 
 
 let dogQueue = new Queue();
@@ -15,7 +16,6 @@ dogRouter
     //getting first dog
     .get((req, res, next) => {
         let firstDog = peek(dogQueue)
-        // console.log('getting dog', firstDog)
         return res.status(200).json({
             dog: firstDog
         })
@@ -23,18 +23,20 @@ dogRouter
 
 
     //adopting a dog
-    .delete((req, res, next) => {
-        // console.log('in dog.js this is the adoptor queue:',display(adoptorQueue))
+    .delete(jsonParser, (req, res, next) => {
+
         let adoptedDog = dogQueue.dequeue()
         dogQueue.enqueue(adoptedDog)
         adoptedQueue.enqueue(adoptedDog)
 
         let adopterDequeue = adoptorQueue.dequeue()
-        adoptorQueue.enqueue(adopterDequeue)
-        console.log('current adoptor list', display(adoptorQueue))
-        // console.log('adopted list',display(adoptedQueue))
+        // console.log('IN DELETE DOG', adopterDequeue, req.body.name)
+        
+        if(adopterDequeue !== req.body.name) {
+            adoptorQueue.enqueue(adopterDequeue)
+        }
+       
         return res.send({
-            // message: `Thank you for adopting ${adoptedDog.name}! We'll be contacting you soon!`,
             adoptedList: display(adoptedQueue)
         })
     }) 
