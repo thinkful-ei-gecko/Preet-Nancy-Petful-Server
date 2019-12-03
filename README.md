@@ -7,7 +7,7 @@ Server-side repo for the Petful adoption app. Petful is a first come first serve
 
 ## Details
 
-* The live app can be found at: [https://petful-app-new.now.sh/adopted](https://petful-app.preetsingh13.now.sh)
+* The live app can be found at: [https://petful-app-new.now.sh](https://petful-app.preetsingh13.now.sh)
 
 * Heroku deployment: [https://shrouded-cove-70604.herokuapp.com/api](https://shrouded-cove-70604.herokuapp.com/api)
 
