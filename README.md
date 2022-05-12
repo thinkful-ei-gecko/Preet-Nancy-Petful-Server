@@ -23,4 +23,4 @@ Server-side repo for the Petful adoption app. Petful is a first come first serve
 * Node
 * Express
 * HTML5
-* CSS3```
+* CSS3
